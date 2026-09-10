@@ -9,7 +9,7 @@
     body { margin: 0; }
     model-viewer { width: 100vw; height: 100vh; }
     #ar-button {
-      position: absolute;
+      position: fixed;
       bottom: 24px;
       left: 50%;
       transform: translateX(-50%);
@@ -20,11 +20,13 @@
       font-size: 16px;
       font-weight: bold;
       box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      z-index: 10;
     }
   </style>
 </head>
 <body>
   <model-viewer
+    id="mv"
     src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
     ios-src="https://modelviewer.dev/shared-assets/models/Astronaut.usdz"
     alt="宇宙飛行士の3Dモデル"
@@ -33,7 +35,14 @@
     auto-rotate
     camera-controls
     shadow-intensity="1">
-    <button slot="ar-button" id="ar-button">📱 ARで見る</button>
   </model-viewer>
+
+  <button id="ar-button">📱 ARで見る</button>
+
+  <script>
+    document.getElementById('ar-button').addEventListener('click', () => {
+      document.getElementById('mv').activateAR();
+    });
+  </script>
 </body>
 </html>
