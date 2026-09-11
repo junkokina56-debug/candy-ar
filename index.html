@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>踊るロボットAR</title>
+  <title>踊るキャラクターAR</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
     body { margin: 0; }
@@ -27,62 +27,16 @@
 <body>
   <model-viewer
     id="mv"
-    src="https://threejs.org/examples/models/gltf/RobotExpressive/RobotExpressive.glb"
-    alt="踊るロボット"
+    src="character.glb"
+    ios-src="character.usdz"
+    alt="踊るキャラクター"
     ar
     ar-modes="webxr scene-viewer quick-look"
     auto-rotate
     camera-controls
     shadow-intensity="1"
-    animation-name="Dance"
+    animation-name="mixamo.com.001"
     autoplay>
-  </model-viewer>
-
-  <button id="ar-button">📱 ARで見る</button>
-
-  <script>
-    document.getElementById('ar-button').addEventListener('click', () => {
-      document.getElementById('mv').activateAR();
-    });
-  </script>
-</body>
-</html><!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ARテスト</title>
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  <style>
-    body { margin: 0; }
-    model-viewer { width: 100vw; height: 100vh; }
-    #ar-button {
-      position: fixed;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #ffffff;
-      border-radius: 24px;
-      border: none;
-      padding: 14px 28px;
-      font-size: 16px;
-      font-weight: bold;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-      z-index: 10;
-    }
-  </style>
-</head>
-<body>
-  <model-viewer
-    id="mv"
-    src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
-    ios-src="https://modelviewer.dev/shared-assets/models/Astronaut.usdz"
-    alt="宇宙飛行士の3Dモデル"
-    ar
-    ar-modes="webxr scene-viewer quick-look"
-    auto-rotate
-    camera-controls
-    shadow-intensity="1">
   </model-viewer>
 
   <button id="ar-button">📱 ARで見る</button>
